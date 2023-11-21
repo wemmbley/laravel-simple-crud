@@ -14,11 +14,12 @@ class CompanyController extends BaseController
         if($request->hasFile('logo')) {
             $file = $request->file('logo');
             $filePath = $file->store('public');
+            $filePath = explode(DIRECTORY_SEPARATOR, $filePath);
         }
 
         Company::insert([
             'name' => $request->input('name'),
-            'logo' => $filePath,
+            'logo' => $filePath[1],
             'website' => $request->input('website'),
             'email' => $request->input('email'),
         ]);

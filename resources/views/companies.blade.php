@@ -40,7 +40,7 @@
                                         <tr>
                                             <td>{{ $company->name }}</td>
                                             <td>
-                                                <img src="{{ asset('storage/app/' . $company->logo) }}" alt="logotype">
+                                                <img src="{{ asset('storage/' . $company->logo) }}" width="50" height="50" alt="logotype">
                                             </td>
                                             <td>{{ $company->website }}</td>
                                             <td>{{ $company->email }}</td>
